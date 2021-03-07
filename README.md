@@ -22,6 +22,10 @@ db.users.update({"Username":"admin"},{$set:{"Username":"your_username"}})
 db.users.update({"Username":"your_username"},{$set:{"UsernameRaw":"your_username","Verified" : true,"Email" : "your_email"}})
 ```
 `your_username`与上条保持一致, `your_email`改为你的邮箱
+```
+db.users.remove({"Email":"demo@leanote.com"})
+```
+删除demo用户
 # 修改参数
 修改`conf/app.conf`, `admin`名字要修改成`your_username`, `secert`也要一定的修改
 # 安装Leanote
@@ -29,3 +33,5 @@ db.users.update({"Username":"your_username"},{$set:{"UsernameRaw":"your_username
 etsid sh /var/www/html/leanote/bin/run.sh
 ```
 `/var/www/html/leanote/`是你的leanote根目录
+# 登陆
+访问 IP:port 登陆用户名为你修改的`your_username`, 密码为`abc123`
